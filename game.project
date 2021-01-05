@@ -1,0 +1,32 @@
+[project]
+title = GameDistribution
+
+[bootstrap]
+main_collection = /example/example.collectionc
+
+[input]
+game_binding = /input/game.input_bindingc
+
+[display]
+width = 1136
+height = 640
+
+[script]
+shared_state = 1
+
+[library]
+include_dirs = gamedistribution
+
+[collection_proxy]
+max_count = 9
+
+[html5]
+scale_mode = stretch
+show_fullscreen_button = 0
+show_made_with_defold = 0
+htmlfile = /example/engine_template.html
+
+[gamedistribution]
+game_id = 89e203558856497e876a43ea86f3bfbb
+debug = 1
+

@@ -1,0 +1,31 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	if gdsdk then
+		pprint(gdsdk)
+		gdsdk.set_listener(function(self, event, message)
+			print(event, message)
+			if event == gdsdk.SDK_GAME_PAUSE then
+				print("Pause game")
+			elseif event == gdsdk.SDK_GAME_START then
+				print("Start game")
+			end
+		end)
+	end
+end
+
+function on_input(self, action_id, action)
+	if action.pressed then
+		if not gdsdk then return end
+		if gui.pick_node(gui.get_node("show_interstitial"), action.x, action.y) then
+			gdsdk.show_interstitial_ad()
+		elseif gui.pick_node(gui.get_node("show_rewarded"), action.x, action.y) then
+			gdsdk.show_rewarded_ad()
+		elseif gui.pick_node(gui.get_node("show_display"), action.x, action.y) then
+			gdsdk.show_display_ad("canvas-ad")
+		elseif gui.pick_node(gui.get_node("hide_display"), action.x, action.y) then
+			gdsdk.hide_display_ad("canvas-ad")
+		elseif gui.pick_node(gui.get_node("open_console"), action.x, action.y) then
+			gdsdk.open_console()
+		end
+	end
+end

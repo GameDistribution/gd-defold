@@ -1,0 +1,128 @@
+- name: gdsdk
+  type: table
+  desc: Functions and constants for interfacing with the GameDistribution SDK.
+  members:
+
+#*****************************************************************************************************
+
+  - name: set_listener
+    type: function
+    desc: Sets the listener function for GameDistribution events.
+    parameters:
+      - name: callback
+        type: function
+        desc: function to call when a GameDistribution event is received from the SDK.
+
+    examples:
+      - desc: |-
+            ```lua
+            gdsdk.set_listener(function(self, event, message)
+                print(event, message)
+            end)
+            ```
+
+#*****************************************************************************************************
+
+  - name: show_interstitial_ad
+    type: function
+    desc: Show an interstitial ad
+
+    examples:
+      - desc: |-
+            ```lua
+            gdsdk.show_interstitial_ad()
+            ```
+
+#*****************************************************************************************************
+
+  - name: show_rewarded_ad
+    type: function
+    desc: Show a rewarded ad
+
+    examples:
+      - desc: |-
+            ```lua
+            gdsdk.show_rewarded_ad()
+            ```
+
+#*****************************************************************************************************
+
+  - name: show_display_ad
+    type: function
+    desc: Show a display/banner ad
+    parameters:
+      - name: container_id
+        type: string
+        desc: id of the div in which to load the ad. This will set the CSS display style of the div to 'block'.
+
+    examples:
+      - desc: |-
+            ```lua
+            gdsdk.show_display_ad("bottom-ad-container")
+            ```
+
+#*****************************************************************************************************
+
+  - name: hide_display_ad
+    type: function
+    desc: Hide a display/banner ad
+    parameters:
+      - name: container_id
+        type: string
+        desc: id of the div to hide. This sets the CSS display style to 'none' for the div.
+
+    examples:
+      - desc: |-
+            ```lua
+            gdsdk.hide_display_ad("bottom-ad-container")
+            ```
+
+#*****************************************************************************************************
+
+  - name: open_console
+    type: function
+    desc: This will open a tiny toolbar, which allows you to call fake advertisements, making the implementation much easier and reliable. Clear your localStorage to disable debugging.
+
+    examples:
+      - desc: |-
+            ```lua
+            gdsdk.open_console()
+            ```
+
+#*****************************************************************************************************
+
+  - name: SDK_READY
+    type: string
+    desc: When the SDK is ready
+
+  - name: SDK_ERROR
+    type: string
+    desc: When the SDK has hit a critical error.
+
+  - name: SDK_GAME_START
+    type: string
+    desc: When the game should start.
+
+  - name: SDK_GAME_PAUSE
+    type: string
+    desc: When the game should pause.
+
+  - name: SDK_GDPR_TRACKING
+    type: string
+    desc: When the publishers' client has requested to not track his/ her data. Hook into this event to find out if you can record client tracking data.
+
+  - name: SDK_GDPR_TARGETING
+    type: string
+    desc: When the publishers' client has requested to not get personalized advertisements. Hook into this event to find out if you can display personalized advertisements in case you use another ad solution.
+
+  - name: SDK_GDPR_THIRD_PARTY
+    type: string
+    desc: When the publishers' client has requested to not load third party services. Hook into this event to find out if you can third party services like Facebook, AddThis, and such alike.
+
+  - name: AD_SDK_MANAGER_READY
+    type: string
+    desc: When the adsManager instance is ready with ads.
+
+  - name: AD_SDK_CANCELED
+    type: string
+    desc: When the ad is cancelled or stopped because it's done running an ad.
