@@ -1,0 +1,23 @@
+<html>
+<head>
+	<script>
+		window["GD_OPTIONS"] = {
+			"gameId": "{{gamedistribution.game_id}}",
+			"onEvent": function(event) {
+				if (typeof window["GD_DEFOLD"] !== 'undefined' && typeof window["GD_DEFOLD"]["onEvent"] !== 'undefined') {
+					window["GD_DEFOLD"]["onEvent"](event);
+				}
+			},
+		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://html5.api.gamedistribution.com/main.min.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'gamedistribution-jssdk'));
+	</script>
+</head>
+<body/>
+</html>

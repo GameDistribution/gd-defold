@@ -28,5 +28,3 @@ htmlfile = /example/engine_template.html
 
 [gamedistribution]
 game_id = 89e203558856497e876a43ea86f3bfbb
-debug = 1
-
