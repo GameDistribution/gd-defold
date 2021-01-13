@@ -34,7 +34,7 @@ Add your Game ID to the GameDistribution section of the **game.project** file:
 If you wish to use GameDistribution with an existing game you can open the **game.project** file and in the [Dependencies field in the Project section](https://defold.com/manuals/project-settings/#dependencies) add:
 
 ```
-https://github.com/GameDistribution/gd-defold/archive/master.zip
+https://github.com/GameDistribution/gd-defold/archive/main.zip
 ```
 
 Open the **game.project** file using a text editor and add a new section with your Game ID:
