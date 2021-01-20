@@ -3,12 +3,19 @@
 var GameDistributionLibrary = {
 
     $Context: {
-        listener: null
+        listener: null,
+        activeElementId: null,
     },
 
     GameDistribution_PlatformInit: function(gameId, debug) {
         window["GD_DEFOLD"] = {
             "onEvent": function(event) {
+                if (event.name == "SDK_GAME_START" && Context.activeElementId) {
+                    var element = document.getElementById(activeElementId);
+                    if (element) {
+                        element.focus();
+                    }
+                }
                 var listener = Context.listener;
                 if (!listener) {
                     console.log("No listener set");
@@ -53,6 +60,10 @@ var GameDistributionLibrary = {
 
     GameDistribution_PlatformShowInterstitialAd: function() {
         if (typeof gdsdk !== 'undefined' && gdsdk.showAd !== 'undefined') {
+            var activeElement = document.activeElement;
+            if (activeElement) {
+                Context.activeElementId = document.activeElement.id;
+            }
             gdsdk.showAd(gdsdk.AdType.Interstitial)
                 .then(() => console.info('showAd(AdType.Interstitial) resolved.'))
                 .catch(error => console.error(error));
@@ -61,6 +72,10 @@ var GameDistributionLibrary = {
 
     GameDistribution_PlatformShowRewardedAd: function() {
         if (typeof gdsdk !== 'undefined' && gdsdk.showAd !== 'undefined') {
+            var activeElement = document.activeElement;
+            if (activeElement) {
+                Context.activeElementId = document.activeElement.id;
+            }
             gdsdk.showAd(gdsdk.AdType.Rewarded)
                 .then(() => console.info('showAd(AdType.Rewarded) resolved.'))
                 .catch(error => console.error(error));
