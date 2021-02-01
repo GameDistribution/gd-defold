@@ -10,7 +10,7 @@ var GameDistributionLibrary = {
     GameDistribution_PlatformInit: function(gameId, debug) {
         window["GD_DEFOLD"] = {
             "onEvent": function(event) {
-                if (event.name == "SDK_GAME_START" && Context.activeElementId) {
+                if ((event.name == "SDK_GAME_START" || event.name == "CONTENT_RESUME_REQUESTED") && Context.activeElementId) {
                     var element = document.getElementById(Context.activeElementId);
                     if (element) {
                         element.focus();
