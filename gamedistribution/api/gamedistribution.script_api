@@ -126,3 +126,79 @@
   - name: AD_SDK_CANCELED
     type: string
     desc: When the ad is cancelled or stopped because it's done running an ad.
+
+  - name: AD_ERROR
+    type: string
+
+  - name: AD_BREAK_READY
+    type: string
+
+  - name: AD_METADATA
+    type: string
+
+  - name: ALL_ADS_COMPLETED
+    type: string
+
+  - name: CLICK
+    type: string
+
+  - name: COMPLETE
+    type: string
+
+  - name: CONTENT_PAUSE_REQUESTED
+    type: string
+
+  - name: CONTENT_RESUME_REQUESTED
+    type: string
+
+  - name: DURATION_CHANGE
+    type: string
+
+  - name: FIRST_QUARTILE
+    type: string
+
+  - name: IMPRESSION
+    type: string
+
+  - name: INTERACTION
+    type: string
+
+  - name: LINEAR_CHANGED
+    type: string
+
+  - name: LOADED
+    type: string
+
+  - name: LOG
+    type: string
+
+  - name: MIDPOINT
+    type: string
+
+  - name: PAUSED
+    type: string
+
+  - name: RESUMED
+    type: string
+
+  - name: SKIPPABLE_STATE_CHANGED
+    type: string
+
+  - name: SKIPPED
+    type: string
+
+  - name: STARTED
+    type: string
+
+  - name: THIRD_QUARTILE
+    type: string
+
+  - name: USER_CLOSE
+    type: string
+
+  - name: VOLUME_CHANGED
+    type: string
+
+  - name: VOLUME_MUTED
+    type: string
+    
