@@ -11,9 +11,10 @@ var GameDistributionLibrary = {
         window["GD_DEFOLD"] = {
             "onEvent": function(event) {
                 if (event.name == "SDK_GAME_START" && Context.activeElementId) {
-                    var element = document.getElementById(activeElementId);
+                    var element = document.getElementById(Context.activeElementId);
                     if (element) {
                         element.focus();
+                        Context.activeElementId = null;
                     }
                 }
                 var listener = Context.listener;
