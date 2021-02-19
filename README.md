@@ -103,3 +103,53 @@ gdsdk.hide_display_ad("canvas-ad")
 
 ## Verify the SDK implementation
 To verify your SDK implementation; make sure to completely view an advertisement, while viewing your game through an iframe launched from the Upload tab of the GameDistribution developer portal page for you game.
+
+## Best practices
+
+### Checklist
+Make sure to test your game against the follow test checklist:
+
+* **All menu options are working**
+  * The game can be paused and resumes from where it was paused.
+  * The game supports targeted web and mobile operating systems.
+  * The page loading indicator works.
+  * All progress indicators within the game function correctly (Level, point, time etc.)
+  * Sound preferences are restored after restarting the game.
+  * Language preferences are restored after restarting the game.
+  * The game is running with stable speed and FPS.
+  * Game does not freeze or crash.
+
+* **Control and buttons**
+  * Controls are supported for both touch devices and mouse/keyboard devices and these must follow the design.
+  * Every button within the game function according to design.
+
+* **Background Music and Sound Effects**
+  * User is able to switch ON/OFF the background/SFX sound.
+  * Object/Character actions and audio are synchronized.
+  * Check for sounds that are not triggered or triggered wrong.
+  * Check for bad sounds, instruments, and music mix.
+
+* **Screen**
+  * Game works in both landscape and portrait mode.
+  * Objects/Characters do not move out of the screen/specified area.
+  * Game has no clipping, overlapping etc. issues.
+  * Any change in browsers (like Minimize, Restore Down, Maximize, Size Scaling or Other Interuptions) does not trigger any issues.
+  * Font family, typography, size, color and other visual effects are consistent
+  * Texts don't have any spelling errors.
+
+* **Ads**
+  * Ad does not interrupt game and cause game over.
+  * Game sound does not overlap with ad sound.
+  * Make sure the banner ad isn't covering any UI components. Test your game with different screen resolutions.
+
+### Localization
+Make sure to translate your game. Focus on these languages:
+
+* German
+* Dutch
+* Spanish
+* Portuguese
+* French
+* Polish
+
+Optionally Italian, Norwegian and Russian
