@@ -55,8 +55,8 @@ gdsdk.set_listener(function(self, event, message)
 		-- pause your game
 	elseif event == gdsdk.SDK_GAME_START then
 		-- resume your game
-  elseif event == gdsdk.SDK_REWARDED_WATCH_COMPLETE then
-    -- give reward to player (optional)
+  	elseif event == gdsdk.SDK_REWARDED_WATCH_COMPLETE then
+    		-- give reward to player (optional)
 	end
 end)
 ```
