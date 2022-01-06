@@ -144,6 +144,7 @@ static void LuaInit(lua_State* L)
 	lua_setfieldstringstring(L, "SDK_ERROR", "SDK_ERROR");
 	lua_setfieldstringstring(L, "SDK_GAME_START", "SDK_GAME_START");
 	lua_setfieldstringstring(L, "SDK_GAME_PAUSE", "SDK_GAME_PAUSE");
+	lua_setfieldstringstring(L, "SDK_REWARDED_WATCH_COMPLETE", "SDK_REWARDED_WATCH_COMPLETE");
 	lua_setfieldstringstring(L, "SDK_GDPR_TRACKING", "SDK_GDPR_TRACKING");
 	lua_setfieldstringstring(L, "SDK_GDPR_TARGETING", "SDK_GDPR_TARGETING");
 	lua_setfieldstringstring(L, "SDK_GDPR_THIRD_PARTY", "SDK_GDPR_THIRD_PARTY");

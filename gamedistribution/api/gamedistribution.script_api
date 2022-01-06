@@ -107,6 +107,10 @@
     type: string
     desc: When the game should pause.
 
+  - name: SDK_REWARDED_WATCH_COMPLETE
+    type: string
+    desc: When the reward should give.
+
   - name: SDK_GDPR_TRACKING
     type: string
     desc: When the publishers' client has requested to not track his/ her data. Hook into this event to find out if you can record client tracking data.

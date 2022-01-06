@@ -8,6 +8,8 @@ function init(self)
 				print("Pause game")
 			elseif event == gdsdk.SDK_GAME_START then
 				print("Start game")
+			elseif event == gdsdk.SDK_REWARDED_WATCH_COMPLETE then
+    			print("reward")
 			end
 		end)
 	end
