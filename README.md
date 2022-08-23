@@ -103,6 +103,21 @@ gdsdk.hide_display_ad("canvas-ad")
 ```
 
 
+### Send Game Event 
+Use SendEvent to show game score and level informations on top frame. You shor a Send Game Event like this:
+
+```
+const obj = {
+    "eventName" : "game_event",
+    "data" : {
+        "level" : level,
+        "score" : score
+    }
+}; 
+gdsdk.sendEvent(obj)
+```
+
+
 ## Verify the SDK implementation
 To verify your SDK implementation; make sure to completely view an advertisement, while viewing your game through an iframe launched from the Upload tab of the GameDistribution developer portal page for you game.
 
