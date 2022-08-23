@@ -13,6 +13,7 @@ extern "C" {
     void GameDistribution_PlatformHideDisplayAd(const char* containerId);
     void GameDistribution_PlatformShowRewardedAd();
     void GameDistribution_PlatformShowInterstitialAd();
+    void GameDistribution_PlatformShowSendGameEvent(const char*  level, const char*  score);
     void GameDistribution_PlatformOpenConsole();
 }
 

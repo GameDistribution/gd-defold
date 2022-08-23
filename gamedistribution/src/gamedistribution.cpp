@@ -116,6 +116,15 @@ static int GameDistribution_ShowInterstitialAd(lua_State* L)
 	return 0;
 }
 
+static int GameDistribution_ShowSendGameEvent(lua_State* L)
+{
+	DM_LUA_STACK_CHECK(L, 0);
+	const char* levelText = luaL_checkstring(L, 1);
+	const char* scoreText = luaL_checkstring(L, 2);
+	GameDistribution_PlatformShowSendGameEvent(levelText,scoreText);
+	return 0;
+}
+
 static int GameDistribution_OpenConsole(lua_State* L)
 {
 	DM_LUA_STACK_CHECK(L, 0);
@@ -131,6 +140,7 @@ static const luaL_reg Module_methods[] =
 	{"show_interstitial_ad", GameDistribution_ShowInterstitialAd},
 	{"show_display_ad", GameDistribution_ShowDisplayAd},
 	{"hide_display_ad", GameDistribution_HideDisplayAd},
+	{"send_game_event", GameDistribution_ShowSendGameEvent},
 	{"open_console", GameDistribution_OpenConsole},
 	{0, 0}
 };
