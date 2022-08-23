@@ -26,6 +26,8 @@ function on_input(self, action_id, action)
 			gdsdk.show_display_ad("canvas-ad")
 		elseif gui.pick_node(gui.get_node("hide_display"), action.x, action.y) then
 			gdsdk.hide_display_ad("canvas-ad")
+		elseif gui.pick_node(gui.get_node("send_game_event"), action.x, action.y) then
+			gdsdk.send_game_event(gui.get_text(gui.get_node("levelText")),gui.get_text(gui.get_node("scoreText")))
 		elseif gui.pick_node(gui.get_node("open_console"), action.x, action.y) then
 			gdsdk.open_console()
 		end
