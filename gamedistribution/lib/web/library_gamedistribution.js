@@ -83,6 +83,25 @@ var GameDistributionLibrary = {
         }
     },
 
+    GameDistribution_PlatformShowSendGameEvent: function(levelText, scoreText) {
+        if (typeof gdsdk !== 'undefined' && gdsdk.showAd !== 'undefined') {
+            var level = parseInt(UTF8ToString(levelText).trim().replace(/[^\d]/g,''));
+            var score = parseInt(UTF8ToString(scoreText).trim().replace(/[^\d]/g,''));
+            if (typeof level !== 'undefined' && typeof score !== 'undefined') {
+                const obj = {
+                    "eventName" : "game_event",
+                    "data" : {
+                        "level" : level,
+                        "score" : score
+                    }
+                }; 
+                gdsdk.sendEvent(obj)
+                    .then(() => console.info('sendEvent resolved.'))
+                    .catch(error => console.error(error));
+            }
+        }
+    },
+
     GameDistribution_PlatformOpenConsole: function() {
         if (typeof gdsdk !== 'undefined' && gdsdk.openConsole !== 'undefined') {
             gdsdk.openConsole();
