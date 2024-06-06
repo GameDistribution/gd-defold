@@ -7,7 +7,7 @@ var GameDistributionLibrary = {
         activeElementId: null,
     },
 
-    GameDistribution_PlatformInit: function(gameId, debug) {
+    GameDistribution_PlatformInit: function() {
         window["GD_DEFOLD"] = {
             "onEvent": function(event) {
                 if ((event.name == "SDK_GAME_START" || event.name == "CONTENT_RESUME_REQUESTED") && Context.activeElementId) {
@@ -23,8 +23,8 @@ var GameDistributionLibrary = {
                     return;
                 }
                 {{{ makeDynCall("vii", "listener") }}} (
-                    allocate(intArrayFromString(event.name), "i8", ALLOC_STACK),
-                    allocate(intArrayFromString(event.message), "i8", ALLOC_STACK)
+                    stringToUTF8OnStack(event.name),
+                    stringToUTF8OnStack(event.message)
                 );
             }
         };
@@ -37,7 +37,7 @@ var GameDistributionLibrary = {
     GameDistribution_PlatformShowDisplayAd: function(containerId) {
         var elementId = UTF8ToString(containerId);
         var element = document.getElementById(elementId);
-        if (typeof element === 'undefined') {
+        if (typeof element === 'undefined' || element == null) {
             console.log("Unable to find element with id " + elementId);
             return;
         }
@@ -52,7 +52,7 @@ var GameDistributionLibrary = {
     GameDistribution_PlatformHideDisplayAd: function(containerId) {
         var elementId = UTF8ToString(containerId);
         var element = document.getElementById(elementId);
-        if (typeof element === 'undefined') {
+        if (typeof element === 'undefined' || element == null) {
             console.log("Unable to find element with id " + elementId);
             return;
         }

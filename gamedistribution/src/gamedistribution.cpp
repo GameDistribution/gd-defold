@@ -60,17 +60,6 @@ static void GameDistribution_OnEventListener(const char* event, const char* mess
 	dmScript::TeardownCallback(g_GameDistribution.m_Callback);
 }
 
-static int GameDistribution_Init(lua_State* L, dmConfigFile::HConfig config)
-{
-	DM_LUA_STACK_CHECK(L, 0);
-
-	int32_t debug = dmConfigFile::GetInt(config, "gamedistribution.debug", 0);
-	const char* gameId = dmConfigFile::GetString(config, "gamedistribution.game_id", "");
-
-	GameDistribution_PlatformInit(gameId, debug);
-	return 0;
-}
-
 static int GameDistribution_SetListener(lua_State* L)
 {
 	DM_LUA_STACK_CHECK(L, 0);
@@ -203,7 +192,7 @@ dmExtension::Result InitializeGameDistributionExtension(dmExtension::Params* par
 {
 	#if defined(DM_PLATFORM_HTML5)
 	LuaInit(params->m_L);
-	GameDistribution_Init(params->m_L, params->m_ConfigFile);
+	GameDistribution_PlatformInit();
 	#endif
 	return dmExtension::RESULT_OK;
 }
