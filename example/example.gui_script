@@ -1,7 +1,21 @@
+local INJECT_BANNER_DIV = [[
+const outer_div = document.createElement("div");
+outer_div.id = "canvas-ad-container";
+outer_div.style = "position: absolute; bottom: 0px; left: 50%;";
+
+const ad_div = document.createElement("div");
+ad_div.id = "canvas-ad";
+ad_div.style = "width: 728px; height:90px; margin-left: -50%;";
+outer_div.appendChild(ad_div);
+
+document.getElementById("canvas-container").appendChild(outer_div);
+]]
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	if gdsdk then
 		pprint(gdsdk)
+		html5.run(INJECT_BANNER_DIV)
 		gdsdk.set_listener(function(self, event, message)
 			print(event, message)
 			if event == gdsdk.SDK_GAME_PAUSE then
@@ -9,7 +23,7 @@ function init(self)
 			elseif event == gdsdk.SDK_GAME_START then
 				print("Start game")
 			elseif event == gdsdk.SDK_REWARDED_WATCH_COMPLETE then
-    			print("reward")
+				print("reward")
 			end
 		end)
 	end

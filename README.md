@@ -17,21 +17,7 @@ When you have registered the game head to the Upload tab and copy the Game ID:
 
 
 ## Installation
-You can integrate GameDistribution in both new games and in existing games. Please follow the instructions below depending on your situation.
-
-
-### Creating a new game
-If you are creating a new game it is recommended that you use the GameDistribution project template from the Defold editor Welcome screen. The GameDistribution template includes the [GameDistribution SDK extension](https://github.com/GameDistribution/gd-defold):
-
-![GameDistribution template](/docs/gamedistribution-template.png)
-
-Add your Game ID to the GameDistribution section of the **game.project** file:
-
-![Adding game id game.project](/docs/adding-gameid.png)
-
-
-### Configuring an existing game
-If you wish to use GameDistribution with an existing game you can open the **game.project** file and in the [Dependencies field in the Project section](https://defold.com/manuals/project-settings/#dependencies) add:
+Open the **game.project** file and in the [Dependencies field in the Project section](https://defold.com/manuals/project-settings/#dependencies) add:
 
 ```
 https://github.com/GameDistribution/gd-defold/archive/main.zip

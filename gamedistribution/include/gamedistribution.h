@@ -7,7 +7,7 @@
 typedef void (*OnEventCallback)(const char* event, const char* message);
 
 extern "C" {
-    void GameDistribution_PlatformInit(const char* gameId, int debug);
+    void GameDistribution_PlatformInit();
     void GameDistribution_PlatformSetEventListener(OnEventCallback callback);
     void GameDistribution_PlatformShowDisplayAd(const char* containerId);
     void GameDistribution_PlatformHideDisplayAd(const char* containerId);
